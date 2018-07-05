@@ -1,9 +1,8 @@
 insert into employee
-values(101,'vikram', '11-01-1990', 'ECSADM', 'J8369854');
+values(101,'ECSADM', '11-01-1990', 'Vikram', 'J8456321');
 
 insert into employee
-values(102,'vivek', '02-03-1994', 'IR&PM', 'J8369855');
+values(102,'IT', '14-11-1986', 'Birju', 'J8466321');
 
 insert into employee
-values(103,'vandana', '03-07-1990', 'A&F', 'J8369856');
-
+values(103,'Accounts', '03-07-1990', 'Vandana', 'J8456486');
