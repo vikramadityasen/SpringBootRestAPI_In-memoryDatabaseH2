@@ -38,9 +38,9 @@ public class EmployeeController {
 	public void deleteEmployee(@PathVariable Integer empId) {
 		employeeService.deleteEmployee(empId);
 	}
-	
+
 	@PostMapping("/createEmployee")
-	public ResponseEntity<Object> createEmployee(@RequestBody Employee employee){
+	public ResponseEntity<Object> createEmployee(@RequestBody Employee employee) {
 		Employee savedEmployee = employeeService.createEmployee(employee);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{empId}")

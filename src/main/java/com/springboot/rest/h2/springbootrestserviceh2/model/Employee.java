@@ -3,7 +3,6 @@ package com.springboot.rest.h2.springbootrestserviceh2.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OrderBy;
 
 @Entity
 public class Employee {
