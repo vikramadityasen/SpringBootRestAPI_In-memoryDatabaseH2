@@ -5,12 +5,18 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.springboot.rest.h2.springbootrestserviceh2.exception.EmployeeNotFoundException;
 import com.springboot.rest.h2.springbootrestserviceh2.model.Employee;
 import com.springboot.rest.h2.springbootrestserviceh2.repository.EmployeeRepository;
 import com.springboot.rest.h2.springbootrestserviceh2.service.EmployeeService;
 
+/**
+ * 
+ * @author vickey
+ *
+ */
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -29,9 +35,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		Optional<Employee> employee = employeeRepository.findById(empId);
 		if (!employee.isPresent()) {
 			try {
-				throw new EmployeeNotFoundException("empId-" + empId);
+				throw new EmployeeNotFoundException("empId- {}" + empId);
 			} catch (EmployeeNotFoundException employeeNotFoundException) {
-				logger.debug("Employee details" + employeeNotFoundException);
+				logger.debug("Employee details- {}" + employeeNotFoundException);
 			}
 		}
 		return employee.get();
@@ -45,6 +51,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public Employee createEmployee(Employee employee) {
 		return employeeRepository.save(employee);
+	}
+
+	@Override
+	public ResponseEntity<Employee> updateEmployee(Employee employee, Integer empId) {
+		Optional<Employee> employeeOptional = employeeRepository.findById(empId);
+		if (!employeeOptional.isPresent())
+			return ResponseEntity.notFound().build();
+		employee.setEmpId(empId);
+		employeeRepository.save(employee);
+		return ResponseEntity.noContent().build();
 	}
 
 }

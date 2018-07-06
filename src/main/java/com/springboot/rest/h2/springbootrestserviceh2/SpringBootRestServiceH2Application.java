@@ -3,6 +3,11 @@ package com.springboot.rest.h2.springbootrestserviceh2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * 
+ * @author vickey
+ *
+ */
 @SpringBootApplication
 public class SpringBootRestServiceH2Application {
 

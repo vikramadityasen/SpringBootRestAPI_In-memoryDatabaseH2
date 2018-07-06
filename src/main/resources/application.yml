@@ -3,6 +3,8 @@ server:
 
 logging:
   level:
+    com.springboot.rest.h2.springbootrestserviceh2: DEBUG
     org.springframework.web: DEBUG
+    
     
     

@@ -5,6 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.springboot.rest.h2.springbootrestserviceh2.model.Employee;
 
+/**
+ * 
+ * @author vickey
+ *
+ */
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
